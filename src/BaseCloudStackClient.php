@@ -22,7 +22,7 @@ class BaseCloudStackClient {
 	        throw new CloudStackClientException(ENDPOINT_EMPTY_MSG, ENDPOINT_EMPTY);
 	    }
 	    
-	    if (!preg_match("|^http://.*$|", $endpoint)) {
+	    if (!preg_match("|^http[s]://.*$|", $endpoint)) {
 	        throw new CloudStackClientException(sprintf(ENDPOINT_NOT_URL_MSG, $endpoint), ENDPOINT_NOT_URL);
 	    }
 	    
